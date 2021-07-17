@@ -13,15 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/knowledge', function () {
     return view('welcome');
 });
 
-Route::get('/users', [IndexController::class, 'index'])->name('picture');
+Route::get('/knowledge', [IndexController::class, 'index'])->name('picture');
 Route::post('/space', [IndexController::class,'inscription'])->name('test');
 
 
-Route::get('/knowledge', 'App\Http\Controllers\MailController@form')->name('pictures');
+Route::get('/', 'App\Http\Controllers\MailController@form')->name('pictures');
 Route::post('/knowledge', 'App\Http\Controllers\MailController@sendEmail')->name('indent');
 
 
